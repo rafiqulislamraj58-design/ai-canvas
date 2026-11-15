@@ -14,7 +14,12 @@ app.use(express.json({ limit: '10mb' }));
 
 // Routes
 app.use('/api', generateRoutes);
-
+app.get('/',(req,res)=>{
+    res.status(200).json({
+        status: 'ok' ,
+        message:'done   backed  run   somthly'
+    })
+})
 // Health Check (Postman e test korar jonno)
 app.get('/health', (req, res) => {
     res.status(200).json({ status: 'OK', message: 'AirUI Backend is running' });
